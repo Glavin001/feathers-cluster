@@ -1,0 +1,53 @@
+{
+  "name": "feathers-cluster",
+  "version": "0.1.0",
+  "description": "A Feathersjs plugin.",
+  "homepage": "https://github.com/Glavin001/feathers-cluster",
+  "keywords": [
+    "feathers-plugin",
+    "feathers"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Glavin001/feathers-cluster/blob/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Glavin001/feathers-cluster.git"
+  },
+  "author": {
+    "name": "Glavin Wiechert",
+    "email": "",
+    "url": "https://github.com/Glavin001"
+  },
+  "contributors": [ ],
+  "bugs": {
+    "url": "https://github.com/Glavin001/feathers-cluster/issues"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "grunt-cli": "~0.1.7",
+    "grunt": "~0.4.1",
+    "grunt-release": "~0.5.1",
+    "grunt-contrib-jshint": "~0.x",
+    "grunt-simple-mocha": "~0.4.0"
+  },
+  "peerDependencies": {
+    "feathers": "~0.3.0"
+  }
+}
