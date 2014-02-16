@@ -1,7 +1,7 @@
 {
   "name": "feathers-cluster",
   "version": "0.1.0",
-  "description": "A Feathersjs plugin.",
+  "description": "Easily take advantage of multi-core systems for Featherjs.",
   "homepage": "https://github.com/Glavin001/feathers-cluster",
   "keywords": [
     "feathers-plugin",
@@ -37,7 +37,9 @@
     "lib": "lib"
   },
   "dependencies": {
-
+    "feathers": "~0.3.0",
+    "redis": "0.10.0",
+    "socket.io": "~0.9.0"
   },
   "devDependencies": {
     "mocha": "*",
@@ -45,7 +47,9 @@
     "grunt": "~0.4.1",
     "grunt-release": "~0.5.1",
     "grunt-contrib-jshint": "~0.x",
-    "grunt-simple-mocha": "~0.4.0"
+    "grunt-simple-mocha": "~0.4.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-express-server": "~0.4.11"
   },
   "peerDependencies": {
     "feathers": "~0.3.0"

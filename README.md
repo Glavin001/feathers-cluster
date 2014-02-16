@@ -1,6 +1,6 @@
 # feathers-cluster [![Build Status](https://travis-ci.org/Glavin001/feathers-cluster.png?branch=master)](https://travis-ci.org/Glavin001/feathers-cluster)
 
-> A [Feathersjs](https://github.com/feathersjs/feathers) plugin.
+> Easily take advantage of multi-core systems for Featherjs.
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ var plugin = require('feathers-cluster');
 // Setup
 var app = feathers();
 // Use Plugin
-app.configure(plugin());
+app.configure(plugin({ /* configuration */ }));
 ```
 
 ## Documentation
@@ -33,4 +33,5 @@ See the [docs](docs/).
 ## License
 
 Copyright (c) 2014 Glavin Wiechert
+
 Licensed under the [MIT license](LICENSE).

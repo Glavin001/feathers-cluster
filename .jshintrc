@@ -18,6 +18,7 @@
     "trailing": true,
     "smarttabs": true,
     "white": false,
+    "loopfunc": true,
     "globals": {
         "it": true,
         "describe": true,
