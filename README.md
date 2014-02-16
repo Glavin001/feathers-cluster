@@ -15,11 +15,42 @@ Finally, to use the plugin in your Feathers app:
 ```javascript
 // Require
 var feathers = require('feathers');
-var plugin = require('feathers-cluster');
-// Setup
+var cluster = require('feathers-cluster');
+// Get a Feathers server
 var app = feathers();
-// Use Plugin
-app.configure(plugin({ /* configuration */ }));
+// ...
+
+// ===== Usage =====
+// app.configure(cluster());
+app.configure(cluster({
+    // Customize
+    cores: 4, // Optional: Force number of cores, defaults to number of CPUs.
+    // Customize the Cluster
+    cluster: function(cluster) {
+        // See http://nodejs.org/api/cluster.html
+        cluster.on('fork', function (worker) {
+            console.log('forked worker ' + worker.process.pid);
+        });
+        cluster.on('listening', function(worker, address) {
+            console.log('worker ' + worker.process.pid + ' is now connected to ' + address.address + ':' + address.port);
+        });
+        cluster.on('exit', function(worker, code, signal) {
+            console.log('worker ' + worker.process.pid + ' died');
+        });
+    },
+    // Important: Do NOT configure Socket.io yourself, 
+    // instead put your Socket.io configuration in the function below.
+    socketio: function(io) {
+        // Example Socket.io configuration
+        io.enable('browser client minification');  // send minified client
+        io.enable('browser client etag');          // apply etag caching logic based on version number
+        io.enable('browser client gzip');          // gzip the file
+        io.set('log level', 1);                    // reduce logging
+    }
+}));
+
+// ....
+
 ```
 
 ## Documentation
